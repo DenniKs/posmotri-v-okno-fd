@@ -10,8 +10,10 @@ html {
 
 .page {
   display: flex;
+  justify-content: space-evenly;
   inline-size: 1200px;
   block-size: 100%;
+  justify-content: space-evenly;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -73,7 +75,8 @@ ol {
 
 .content__list-container {
   height: 298px;
-  overflow-y: scroll;
+  overflow: auto;
+  position: relative;
 }
 
 .content__details {
@@ -154,7 +157,7 @@ ol {
 .content__card-link {
   width: 100%;
   text-decoration: none;
-  color: #fff;
+  color: inherit;
 }
 
 .search-form__fieldset-title {
@@ -195,7 +198,7 @@ ol {
   line-height: 16.2px;
   line-clamp: 3;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: auto;
   overflow: hidden;
 }
 
@@ -219,6 +222,7 @@ ol {
   cursor: pointer;
   display: flex;
   width: fit-content;
+  align-items:center;
 }
 
 .search-form__textfield {
@@ -233,13 +237,12 @@ ol {
   border-right: none;
   appearance: none;
   -webkit-appearance: none;
-  color: #fff;
+  color: inherit;
   min-width: 225px;
 }
 
 .search-form__textfield::placeholder {
   color: rgba(255, 255, 255, 0.7);
-  font-weight: 400;
 }
 
 .search-form__textfield:focus {
@@ -280,11 +283,11 @@ ol {
 .button {
   border: 1px solid white;
   background-color: transparent;
-  color: white;
+  color: inherit;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 700;
-  height: 34px;
+  min-height: 34px;
   line-height: 21.6px;
   text-align: center;
   cursor: pointer;
@@ -298,13 +301,17 @@ ol {
   text-decoration: underline;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .button:focus-visible {
   outline: 1px solid white;
   outline-offset: 2px;
 }
 
 .search-form__submit-button {
-  width: 194px;
+  min-width: 194px;
   align-self: end;
 }
 
